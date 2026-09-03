@@ -1,0 +1,7 @@
+[
+  {"name": "NBCFDC State Channelizing Agency - Pune", "type": "SCA", "location": "Pune", "latitude": 18.5204, "longitude": 73.8567, "npa_flag": false},
+  {"name": "Bank of Maharashtra - Shivajinagar", "type": "PSB", "location": "Pune", "latitude": 18.5308, "longitude": 73.8475, "npa_flag": false},
+  {"name": "Maharashtra Gramin Bank", "type": "RRB", "location": "Pune", "latitude": 18.5089, "longitude": 73.8553, "npa_flag": false},
+  {"name": "SC Welfare NBFC-MFI Branch", "type": "NBFC-MFI", "location": "Pune", "latitude": 18.4970, "longitude": 73.8560, "npa_flag": true},
+  {"name": "Union Bank of India - Kothrud", "type": "PSB", "location": "Pune", "latitude": 18.5074, "longitude": 73.8077, "npa_flag": false}
+]
