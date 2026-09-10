@@ -1,68 +1,121 @@
 @import "tailwindcss";
-@import "leaflet/dist/leaflet.css";
 
 :root {
-  --primary-navy: #002147;
-  --navy-dark: #0f172a;
-  --saffron-gold: #d97706;
-  --emerald-approved: #059669;
-  --gov-slate: #f8fafc;
-  --border-slate: #e2e8f0;
-  --font-scale: 100%;
+  --navy: #002147;
+  --navy-2: #0a2f55;
+  --navy-3: #1b3f68;
+  --saffron: #f4772e;
+  --saffron-soft: #fdeee2;
+  --gold: #d97706;
+  --emerald: #059669;
+  --red: #dc2626;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-500: #64748b;
+  --slate-800: #1e293b;
+  --white: #ffffff;
 }
 
-.high-contrast {
-  --primary-navy: #000000;
-  --navy-dark: #000000;
-  --saffron-gold: #ffff00;
-  --emerald-approved: #00ff00;
-  --gov-slate: #000000;
-  --border-slate: #ffffff;
-  background-color: #000000 !important;
-  color: #ffffff !important;
-}
-
-html {
-  font-size: var(--font-scale);
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy2: var(--navy-2);
+  --color-navy3: var(--navy-3);
+  --color-saffron: var(--saffron);
+  --color-saffronsoft: var(--saffron-soft);
+  --color-emerald: var(--emerald);
 }
 
 body {
-  background-color: #f8fafc;
-  color: #0f172a;
+  background: var(--slate-100);
+  color: var(--slate-800);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Custom Scrollbar for Portal Tables */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-::-webkit-scrollbar-thumb {
-  background: #94a3b8;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+/* ---------- Components ---------- */
+@layer components {
+  .nidhi-card {
+    @apply bg-white rounded-xl border border-slate-200 shadow-sm;
+  }
+
+  .nidhi-card-accent {
+    border-left: 4px solid var(--saffron);
+  }
+
+  .nidhi-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors;
+  }
+
+  .nidhi-btn-primary {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .nidhi-btn-primary:hover {
+    background: var(--navy-3);
+  }
+
+  .nidhi-btn-saffron {
+    background: var(--saffron);
+    color: var(--white);
+  }
+  .nidhi-btn-saffron:hover {
+    filter: brightness(0.95);
+  }
+
+  .nidhi-btn-outline {
+    @apply border border-slate-300 bg-white text-slate-800;
+  }
+  .nidhi-btn-outline:hover {
+    @apply bg-slate-100;
+  }
+
+  .nidhi-btn-ghost {
+    @apply text-slate-600 hover:bg-slate-100;
+  }
+
+  .nidhi-input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-saffron focus:ring-2 focus:ring-saffron/30;
+  }
+
+  .nidhi-label {
+    @apply block text-sm font-medium text-slate-600 mb-1;
+  }
+
+  .nidhi-badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+
+  .nidhi-table {
+    @apply w-full text-sm;
+  }
+  .nidhi-table th {
+    @apply text-left font-semibold text-slate-500 uppercase tracking-wide text-xs py-2 px-3 border-b border-slate-200;
+  }
+  .nidhi-table td {
+    @apply py-3 px-3 border-b border-slate-100;
+  }
 }
 
-/* Pulse animation for voice assist visualizer */
-@keyframes audioWave {
-  0%, 100% { height: 6px; }
-  50% { height: 24px; }
+/* ---------- Status colors ---------- */
+.badge-eligible {
+  background: #ecfdf5;
+  color: var(--emerald);
+}
+.badge-potentially {
+  background: var(--saffron-soft);
+  color: var(--gold);
+}
+.badge-not-eligible {
+  background: #fef2f2;
+  color: var(--red);
+}
+.badge-insufficient {
+  background: var(--slate-100);
+  color: var(--slate-500);
 }
 
-.animate-wave-1 { animation: audioWave 1s infinite 0.1s; }
-.animate-wave-2 { animation: audioWave 1s infinite 0.3s; }
-.animate-wave-3 { animation: audioWave 1s infinite 0.2s; }
-.animate-wave-4 { animation: audioWave 1s infinite 0.4s; }
-
-/* Custom Leaflet Map Container styling */
-.leaflet-container {
-  width: 100%;
-  height: 100%;
-  border-radius: 0.75rem;
-  z-index: 10;
+/* ---------- Chakra-inspired decorative ring (hero) ---------- */
+.chakra-ring {
+  border-radius: 9999px;
+  border: 6px double rgba(244, 119, 46, 0.35);
+  box-shadow: 0 0 0 6px rgba(0, 33, 71, 0.08), 0 0 0 12px rgba(244, 119, 46, 0.12);
 }

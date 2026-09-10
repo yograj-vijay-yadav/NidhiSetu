@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "is_demo_data": true,
+    "source": "DEMO_PLACEHOLDER",
+    "note": "All thresholds below are DEMO / PLACEHOLDER values for the NidhiSetu college project. They are NOT official government policy and must be verified against the latest official guidelines before any real use.",
+    "category": "general"
+  },
+  "schemes": [
+    {
+      "scheme_id": "education_loan",
+      "name": "Concessional Education Loan Scheme (Demo)",
+      "description": "Education financing with moratorium covering the course duration. DEMO data.",
+      "categories": ["sc", "st", "obc", "minority", "women", "general"],
+      "purpose": ["education"],
+      "max_education_cost": 2000000,
+      "loan_percentage": 0.90,
+      "max_loan_amount": 1800000,
+      "interest_rate": 0.065,
+      "tenure_years": 10,
+      "moratorium_months": 12,
+      "moratorium_policy": "interest_accrues",
+      "income_cap": 600000,
+      "minimum_age": 16,
+      "maximum_age": 35,
+      "channelizing_agencies": ["SCA", "PSB"],
+      "source_document": "DEMO_PLACEHOLDER",
+      "is_demo_data": true
+    },
+    {
+      "scheme_id": "skilling_loan",
+      "name": "Skill Development Loan (Demo)",
+      "description": "Zero-interest (demo) short-tenure loan for skilling and upskilling courses. DEMO data.",
+      "categories": ["sc", "st", "obc", "minority", "women", "general"],
+      "purpose": ["skill_development"],
+      "max_education_cost": 150000,
+      "loan_percentage": 1.0,
+      "max_loan_amount": 150000,
+      "interest_rate": 0.0,
+      "tenure_years": 5,
+      "moratorium_months": 12,
+      "moratorium_policy": "interest_free_deferred",
+      "income_cap": null,
+      "minimum_age": 15,
+      "maximum_age": 45,
+      "channelizing_agencies": ["SCA", "NBFC-MFI"],
+      "source_document": "DEMO_PLACEHOLDER",
+      "is_demo_data": true
+    },
+    {
+      "scheme_id": "general_business_loan",
+      "name": "General Business Loan (Demo)",
+      "description": "Market-rate business financing open to all categories. DEMO data.",
+      "categories": ["general"],
+      "purpose": ["business", "self_employment"],
+      "max_project_cost": 2500000,
+      "loan_percentage": 0.75,
+      "max_loan_amount": 1875000,
+      "interest_rate": 0.115,
+      "tenure_years": 5,
+      "moratorium_months": 0,
+      "moratorium_policy": "no_moratorium",
+      "income_cap": null,
+      "minimum_age": 21,
+      "maximum_age": 60,
+      "channelizing_agencies": ["PSB", "NBFC-MFI"],
+      "source_document": "DEMO_PLACEHOLDER",
+      "is_demo_data": true
+    }
+  ]
+}

@@ -1,9 +1,24 @@
+"""Partner endpoints."""
+
+from __future__ import annotations
+
 from fastapi import APIRouter
-from app.schemas.partner_schema import PartnerListResponse
-from app.controllers.partner_controller import handle_partner_request
+
+from app.controllers import partner_controller
+from app.schemas.partner import PartnerMatchRequest, PartnerMatchResponse
 
 router = APIRouter()
 
-@router.get("/nearby", response_model=PartnerListResponse)
-def nearby_partners_endpoint(scheme_type: str = None):
-    return handle_partner_request(scheme_type)
+
+@router.post(
+    "/match",
+    response_model=PartnerMatchResponse,
+    summary="Match authorized channelizing partners",
+    description=(
+        "Deterministic partner matching by scheme, category and city. NPA-flagged and "
+        "inactive partners are NEVER recommended."
+    ),
+    responses={200: {"description": "Partner list (may be empty)"}},
+)
+def match_partners(request: PartnerMatchRequest) -> PartnerMatchResponse:
+    return partner_controller.handle_partner_match(request)
